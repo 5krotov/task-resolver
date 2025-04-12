@@ -7,3 +7,6 @@
 [submodule "api-service"]
 	path = api-service
 	url = https://github.com/5krotov/task-resolver-api-service
+[submodule "worker-service"]
+	path = worker-service
+	url = https://github.com/5krotov/task-resolver-worker-service
