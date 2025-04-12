@@ -1,5 +1,5 @@
 [submodule "task-resolver-infra"]
-	path = task-resolver-infra
+	path = infra
 	url = https://github.com/5krotov/task-resolver-infra
 [submodule "data-provider-service"]
 	path = data-provider-service
