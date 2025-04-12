@@ -21,12 +21,10 @@ git commit -m "Add submodule <name>"
 git submodule update --remote --merge
 ```
 
-> В пространстве 5krotov подмодули, относящиеся к `task-resolver`,
-> соответствуют паттерну `task-resolver-<name>`. Будет удобно, если здесь
-> папки, соответствующие данным репо, будут названы просто `<name>`. Поэтому в
-> bash-команде выше используется _git submodule add
-> <baseurl>/task-resolver-<name> **<name>**_.
-
+> Поскольку подмодули, относящиеся к `task-resolver`, соответствуют паттерну
+> `task-resolver-<name>`, будет удобно, если здесь папки, соответствующие
+> этим репозиториям, будут названы просто `<name>`. Поэтому в bash-команде
+> выше используется _git submodule add \<baseurl\>/task-resolver-\<name\> **\<name\>**_.
 
 **Подтягивание новых изменений.**
 
