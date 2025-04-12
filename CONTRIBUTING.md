@@ -7,49 +7,7 @@
 Название каждого подмодуля _**должно**_ соответствовать паттерну
 `task-resolver-<name>`.
 
-**Добавление подмодуля.**
-
-Предположим, вы начинаете работу над новой частью приложения. В пространстве
-[5krotov](https://github.com/5krotov) создайте репозиторий
-`task-resolver-<name>`.
-
-Затем склонируйте текущий репозиторий и выполните:
-
-```bash
-git submodule add https://github.com/5krotov/task-resolver-<name> <name>
-git commit -m "Add submodule <name>"
-git submodule update --remote --merge
-```
-
-> Поскольку подмодули, относящиеся к `task-resolver`, соответствуют паттерну
-> `task-resolver-<name>`, будет удобно, если здесь директории, соответствующие
-> этим репозиториям, будут названы просто `<name>`. Поэтому в bash-команде
-> выше используется _git submodule add \<baseurl\>/task-resolver-\<name\> **\<name\>**_.
-
-**Подтягивание новых изменений.**
-
-Чтобы получить здесь актуальные изменения из репозитория
-`task-resolver-<name>`, выполните:
-
-```bash
-git submodule update --remote --merge
-```
-
-В будущем этот процесс будет автоматизирован в рамках
-[issue](https://github.com/5krotov/task-resolver/issues/9).
-
-**Ренейминг подмодуля.**
-
-Если вы хотите изменить название репозитория, сделайте это в UI GitHub, затем в
-корне этого проекта выполните:
-
-```bash
-git mv <old-name> <new-name>
-```
-
-Откройте `.gitmodules` и обновите url, если он был изменён.
-
-Добавьте изменения и запушьте в репозиторий.
+См. [SUBMODULES.md](./SUBMODULES.md)
 
 
 ## Создание issues
