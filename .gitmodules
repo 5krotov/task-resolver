@@ -4,3 +4,6 @@
 [submodule "data-provider-service"]
 	path = data-provider-service
 	url = https://github.com/5krotov/task-resolver-data-provider-service
+[submodule "api-service"]
+	path = api-service
+	url = https://github.com/5krotov/task-resolver-api-service
