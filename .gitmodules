@@ -1,3 +1,6 @@
 [submodule "infra"]
 	path = infra
 	url = https://github.com/5krotov/infra
+[submodule "data-provider-service"]
+	path = data-provider-service
+	url = https://github.com/5krotov/task-resolver-data-provider-service
