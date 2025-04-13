@@ -13,3 +13,6 @@
 [submodule "agent-service"]
 	path = agent-service
 	url = https://github.com/5krotov/task-resolver-agent-service
+[submodule "pkg"]
+	path = pkg
+	url = https://github.com/5krotov/task-resolver-pkg
