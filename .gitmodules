@@ -16,3 +16,6 @@
 [submodule "pkg"]
 	path = pkg
 	url = https://github.com/5krotov/task-resolver-pkg
+[submodule "web-ui"]
+	path = web-ui
+	url = https://github.com/5krotov/task-resolver-web-ui
