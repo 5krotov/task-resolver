@@ -1,5 +1,5 @@
 kafka:
-  addr: kafka:9092
+  addr: kafka-cluster:9092
   group: agent-group
   task_topic: tasks
   status_topic: task-status

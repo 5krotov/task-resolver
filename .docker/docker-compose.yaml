@@ -32,7 +32,7 @@ services:
     environment:
       ZOOKEEPER_JVMFLAGS: "-Xmx2g -Xms2g" # Allocate 2GB heap memory
 
-  kafka:
+  kafka-cluster:
     image: wurstmeister/kafka
     container_name: kafka
     ports:
@@ -54,7 +54,7 @@ services:
     volumes:
       - ./config/worker-config.yaml:/app/config.yaml
     depends_on:
-      - kafka
+      - kafka-cluster
 
   agent:
     build:
@@ -67,7 +67,7 @@ services:
     volumes:
       - ./config/agent-config.yaml:/etc/agent-service/config.yaml
     depends_on:
-      - kafka
+      - kafka-cluster
 
   data-provider:
     build:
