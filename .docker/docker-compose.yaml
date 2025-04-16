@@ -34,11 +34,11 @@ services:
 
   kafka-cluster:
     image: wurstmeister/kafka
-    container_name: kafka
+    container_name: kafka-cluster
     ports:
       - "9092:9092"
     environment:
-      KAFKA_ADVERTISED_HOST_NAME: kafka
+      KAFKA_ADVERTISED_HOST_NAME: kafka-cluster
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
     depends_on:
       - zookeeper
