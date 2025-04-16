@@ -1,0 +1,12 @@
+http:
+  addr: 0.0.0.0:8080
+
+kafka:
+  addr: kafka:9092
+  group: ""
+  task_topic: tasks
+  status_topic: task-status
+
+worker:
+  queue_size: 2
+  threads: 2

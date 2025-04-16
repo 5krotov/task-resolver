@@ -1,0 +1,7 @@
+api-service:
+  http:
+    addr: 0.0.0.0:8080
+agent:
+  addr: http://agent:8080
+data-provider:
+  addr: http://data-provider:8080

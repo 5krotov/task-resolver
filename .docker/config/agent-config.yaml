@@ -1,0 +1,10 @@
+kafka:
+  addr: kafka:9092
+  group: agent-group
+  task_topic: tasks
+  status_topic: task-status
+data-provider:
+  addr: http://data-provider:8080
+agent:
+  http:
+    addr: 0.0.0.0:8080

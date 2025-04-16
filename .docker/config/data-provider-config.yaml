@@ -1,0 +1,19 @@
+http:
+  addr: 0.0.0.0:8080
+
+redis:
+  addr: redis:6379
+  database: 0
+  password_env_var: REDIS_PASSWORD
+  cache_lifetime: 1s
+
+postgres:
+  addr: postgres:5432
+  user_env_var: POSTGRES_USER
+  password_env_var: POSTGRES_PASSWORD
+  db_name: resolver
+  ssl_mode: disable
+  conn_lifetime: 1h
+  max_open_conn: 20
+  max_idle_conn: 20
+  migration_path: file:///etc/data-provider-service/migrations/
