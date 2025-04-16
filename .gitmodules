@@ -19,3 +19,6 @@
 [submodule "web-ui"]
 	path = web-ui
 	url = https://github.com/5krotov/task-resolver-web-ui
+[submodule "performance-test"]
+	path = performance-test
+	url = https://github.com/5krotov/task-resolver-performance-test
