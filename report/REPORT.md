@@ -8,6 +8,11 @@
 - Шинкаренко Андрей
 
 ## Приложение
+
+Актуальные ссылки на [на
+UI](https://bergman-task-resolver-web-ui.mfti.devops-teta.ru/), [на
+API](https://bergman-task-resolver-api.mfti.devops-teta.ru/).
+
 ### Overview
 Task Resolver - приложение, эмулирующее выполнение задач. Пользователь создаёт задачу, указывая название и сложность
 (easy, medium, hard), после чего приложение делает вид, что выполняет его (засыпает на некоторое время). 
