@@ -101,3 +101,16 @@ services:
       - worker
       - data-provider
       - agent
+  
+  web-ui:
+    build:
+      context: ../web-ui
+      dockerfile: ../web-ui/.docker/Dockerfile
+    container_name: web-ui
+    restart: always
+    environment:
+      - BASE_REST_API_URL=http://api:8080/api/v1
+    ports:
+      - "80:3000"
+    depends_on:
+      - api
