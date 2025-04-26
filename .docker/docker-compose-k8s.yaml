@@ -41,6 +41,7 @@ services:
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: true
       KAFKA_NUM_PARTITIONS: 10
+      KAFKA_CREATE_TOPICS: "tasks:10:1,task-status:10:1"
     depends_on:
       - zookeeper
 
