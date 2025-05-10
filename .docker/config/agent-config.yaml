@@ -4,7 +4,15 @@ kafka:
   task_topic: tasks
   status_topic: task-status
 data-provider:
-  addr: http://data-provider:8080
+  addr: data-provider:8080
+  useTLS: false
+  caCert: ""
+  grpcServerName: ""
 agent:
-  http:
+  grpc:
+    network: "tcp"
     addr: 0.0.0.0:8080
+    useTLS: false
+    cert: ""
+    key: ""
+    ca: ""

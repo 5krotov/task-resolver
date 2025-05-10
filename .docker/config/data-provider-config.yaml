@@ -1,5 +1,10 @@
-http:
+grpc:
+  network: "tcp"
   addr: 0.0.0.0:8080
+  useTLS: false
+  cert: ""
+  key: ""
+  ca: ""
 
 redis:
   addr: redis:6379

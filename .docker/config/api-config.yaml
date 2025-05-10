@@ -2,6 +2,12 @@ api-service:
   http:
     addr: 0.0.0.0:8080
 agent:
-  addr: http://agent:8080
+  addr: agent:8080
+  useTLS: false
+  caCert: ""
+  grpcServerName: ""
 data-provider:
-  addr: http://data-provider:8080
+  addr: data-provider:8080
+  useTLS: false
+  caCert: ""
+  grpcServerName: ""
