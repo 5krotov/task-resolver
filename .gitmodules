@@ -22,3 +22,6 @@
 [submodule "performance-test"]
 	path = performance-test
 	url = https://github.com/5krotov/task-resolver-performance-test
+[submodule "certificate-generator"]
+	path = certificate-generator
+	url = https://github.com/5krotov/task-resolver-certificate-generator
