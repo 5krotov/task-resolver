@@ -1,4 +1,16 @@
+volumes:
+  certs:
+
 services:
+  certificate-generator:
+    build:
+      context: ../certificate-generator
+      dockerfile: ../certificate-generator/Dockerfile
+    volumes:
+      - ../certificate-generator/configs/:/configs
+      - certs:/certs
+    command: [ "/configs", "/certs", "api-service", "agent-service", "data-provider-service" ]
+
   postgres:
     image: postgres:14
     container_name: postgres_db
@@ -62,8 +74,12 @@ services:
     restart: always
     volumes:
       - ./config/agent-config.yaml:/etc/agent-service/config.yaml
+      - certs:/certs
     depends_on:
-      - kafka-cluster
+      certificate-generator:
+        condition: service_completed_successfully
+      kafka-cluster:
+        condition: service_started
 
   data-provider:
     build:
@@ -79,9 +95,14 @@ services:
       REDIS_PASSWORD: ${REDIS_PASSWORD:-myredispassword}
     volumes:
       - ./config/data-provider-config.yaml:/etc/data-provider-service/config.yaml
+      - certs:/certs
     depends_on:
-      - postgres
-      - redis
+      certificate-generator:
+          condition: service_completed_successfully
+      postgres:
+        condition: service_started
+      redis:
+        condition: service_started
 
   api:
     build:
@@ -93,10 +114,16 @@ services:
       - "8080:8080"
     volumes:
       - ./config/api-config.yaml:/etc/api-service/config.yaml
+      - certs:/certs
     depends_on:
-      - worker
-      - data-provider
-      - agent
+      certificate-generator:
+        condition: service_completed_successfully
+      worker:
+        condition: service_started
+      data-provider:
+        condition: service_started
+      agent:
+        condition: service_started
   
   web-ui:
     build:

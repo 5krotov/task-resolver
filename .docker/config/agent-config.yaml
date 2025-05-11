@@ -5,14 +5,17 @@ kafka:
   status_topic: task-status
 data-provider:
   addr: data-provider:8080
-  useTLS: false
-  caCert: ""
-  grpcServerName: ""
+  useTLS: true
+  grpcServerName: "data-provider-service"
 agent:
   grpc:
     network: "tcp"
     addr: 0.0.0.0:8080
-    useTLS: false
-    cert: ""
-    key: ""
-    ca: ""
+    useTLS: true
+    cert: "/certs/agent-service/agent-service.pem"
+    key: "/certs/agent-service/agent-service-key.pem"
+    ca: "/certs/internal/internal-ca.pem"
+grpc-client:
+  caCert: "/certs/internal/internal-ca.pem"
+  clientCert: "/certs/agent-service/agent-service.pem"
+  clientKey: "/certs/agent-service/agent-service-key.pem"

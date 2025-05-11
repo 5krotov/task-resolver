@@ -1,10 +1,10 @@
 grpc:
   network: "tcp"
   addr: 0.0.0.0:8080
-  useTLS: false
-  cert: ""
-  key: ""
-  ca: ""
+  useTLS: true
+  cert: "/certs/data-provider-service/data-provider-service.pem"
+  key: "/certs/data-provider-service/data-provider-service-key.pem"
+  ca: "/certs/internal/internal-ca.pem"
 
 redis:
   addr: redis:6379

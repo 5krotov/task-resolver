@@ -3,11 +3,13 @@ api-service:
     addr: 0.0.0.0:8080
 agent:
   addr: agent:8080
-  useTLS: false
-  caCert: ""
-  grpcServerName: ""
+  useTLS: true
+  grpcServerName: "agent-service"
 data-provider:
   addr: data-provider:8080
-  useTLS: false
-  caCert: ""
-  grpcServerName: ""
+  useTLS: true
+  grpcServerName: "data-provider-service"
+grpc-client:
+  caCert: "/certs/internal/internal-ca.pem"
+  clientCert: "/certs/api-service/api-service.pem"
+  clientKey: "/certs/api-service/api-service-key.pem"
