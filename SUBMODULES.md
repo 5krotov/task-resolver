@@ -1,3 +1,5 @@
+# SUBMODULES
+
 ## Клонирование репозитория
 
 После `git clone` выполните `git submodule init`. Далее см. "Подтягивание новых
@@ -58,3 +60,12 @@ git mv <old-name> <new-name>
 Откройте `.gitmodules` и обновите url, если он был изменён.
 
 Добавьте изменения и запушьте в репозиторий.
+
+## Checkout тега
+
+`git checkout tag` не обновит подмодули до требуемой версии, а лишь укажет на нужные коммиты (см. `git diff` после `checkout`), поэтому корректное перемещение выглядит так:
+
+```bash
+git checkout tag
+git submodule update --init --recursive --checkout
+```

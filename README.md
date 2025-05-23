@@ -16,7 +16,17 @@
 
 ## Запуск 
 
+После клонирования репозитория:
+
+```bash
+git checkout stable
+# Обновить подмодули до версии, определённой в теге stable
+git submodule update --init --recursive --checkout
+```
+
 ### Docker
+
+В папке `.docker` выполните:
 
 Build:
 
