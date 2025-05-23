@@ -39,35 +39,35 @@ jobs:
         run: |
           git push
 
-      # - name: Set up Docker Buildx
-      #   uses: docker/setup-buildx-action@v1
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
 
-      # - name: Login to Harbor
-      #   uses: docker/login-action@v1
-      #   with:
-      #     registry: harbor.devops-teta.ru
-      #     username: ${{ secrets.HARBOR_USERNAME }}
-      #     password: ${{ secrets.HARBOR_PASSWORD }}
+      - name: Login to Harbor
+        uses: docker/login-action@v1
+        with:
+          registry: harbor.devops-teta.ru
+          username: ${{ secrets.HARBOR_USERNAME }}
+          password: ${{ secrets.HARBOR_PASSWORD }}
 
-      # - name: Install jq
-      #   run: sudo apt-get install -y jq
+      - name: Install jq
+        run: sudo apt-get install -y jq
 
-      # - name: Build and push Docker images
-      #   run: |
-      #     cd .docker
+      - name: Build and push Docker images
+        run: |
+          cd .docker
 
-      #     svc_list=$(docker compose config --format json | \
-      #         jq '.services | to_entries | map(select(.value.build)) | .[].key' | \
-      #         tr -d \")
+          svc_list=$(docker compose config --format json | \
+              jq '.services | to_entries | map(select(.value.build)) | .[].key' | \
+              tr -d \")
 
-      #     echo "Will build the following services:"
-      #     echo $svc_list
-      #     
-      #     echo "$svc_list" | while read svc; do
-      #         echo "Building $svc..."
-      #         docker compose build $svc
-      #         echo "Tagging $svc..."
-      #         docker tag docker-$svc:latest harbor.devops-teta.ru/bergman-valery/$svc
-      #         echo "Pushing $svc to Harbor..."
-      #         docker push harbor.devops-teta.ru/bergman-valery/$svc
-      #     done
+          echo "Will build the following services:"
+          echo $svc_list
+
+          echo "$svc_list" | while read svc; do
+              echo "Building $svc..."
+              docker compose build $svc
+              echo "Tagging $svc..."
+              docker tag docker-$svc:latest harbor.devops-teta.ru/bergman-valery/$svc
+              echo "Pushing $svc to Harbor..."
+              docker push harbor.devops-teta.ru/bergman-valery/$svc
+          done
